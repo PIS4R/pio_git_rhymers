@@ -12,21 +12,42 @@ public class DefaultCountingOutRhymer {
     private int getTotal() {
         return total;
     }
+
+    /**
+     * @param in
+     * @return void
+     */
     protected void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
+
+    /**
+     * @return 1 if total is empty, 0 in another case
+     */
     protected boolean callCheck() {
         return total == EMPTY;
     }
+
+    /**
+     * @return 1 if total is full, 0 in another case
+     */
     protected boolean isFull() {
         return total == FULL;
     }
+
+    /**
+     * @return element of array numbers on index total
+     */
     protected int peekaboo() {
         if (callCheck())
             return ERR_CODE;
         return numbers[total];
     }
+
+    /**
+     * @return element of array numbers on index total with decrement
+     */
     protected int countOut() {
         if (callCheck())
             return ERR_CODE;
