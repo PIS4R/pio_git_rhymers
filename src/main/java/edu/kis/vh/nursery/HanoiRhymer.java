@@ -21,7 +21,4 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
         return totalRejected;
     }
 
-    protected void setTotalRejected(int totalRejected) {
-        this.totalRejected = totalRejected;
-    }
 }
