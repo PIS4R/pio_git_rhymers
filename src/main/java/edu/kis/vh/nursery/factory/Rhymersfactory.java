@@ -7,7 +7,6 @@ public interface Rhymersfactory {
     public DefaultCountingOutRhymer getStandardRhymer();
     public DefaultCountingOutRhymer getFalseRhymer();
     public DefaultCountingOutRhymer getFIFORhymer();
-
     public DefaultCountingOutRhymer getHanoiRhymer();
 
 }

@@ -15,6 +15,7 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
         else
             super.countIn(in);
     }
+    //TODO: method is not used anywhere
      protected int getTotalRejected() {
         return totalRejected;
     }
