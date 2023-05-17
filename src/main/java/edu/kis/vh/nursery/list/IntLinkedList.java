@@ -1,40 +1,62 @@
 package edu.kis.vh.nursery.list;
-
+//TODO Class not used anywhere, generate warnings
 public class IntLinkedList {
 
-    Node last;
-    int i;
-
-    public void push(int i) {
+    private static final int ERR_CODE = -1;
+    private Node last;
+    // TODO: Not used variable, should think about removing it
+    private int i;
+    private void push(int i) {
         if (last == null)
             last = new Node(i);
         else {
-            last.next = new Node(i);
-            last.next.prev = last;
-            last = last.next;
+            last.setNext(new Node(i));
+            last.getNext().setPrev(last);
+            last = last.getNext();
         }
     }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return last == null;
     }
-
-    public boolean isFull() {
+    // TODO: Not used variable, should think about removing it
+    private boolean isFull() {
         return false;
     }
-
-    public int top() {
+    // TODO: Not used method, should think about removing it
+    private int top() {
         if (isEmpty())
-            return -1;
+            return ERR_CODE;
         return last.value;
     }
-
-    public int pop() {
+    // TODO: Not used method, should think about removing it
+    private int pop() {
         if (isEmpty())
-            return -1;
+            return ERR_CODE;
         int ret = last.value;
-        last = last.prev;
+        last = last.getPrev();
         return ret;
     }
-
 }
+class Node {
+
+    protected final int value;
+    private Node next, prev;
+    // TODO: use more adequate name insted of i, maybe iterator
+    protected Node(int i) {
+        value = i;
+    }
+    protected Node getPrev() {
+        return prev;
+    }
+    protected void setPrev(Node prev) {
+        this.prev = prev;
+    }
+    protected Node getNext() {
+        return next;
+    }
+    protected void setNext(Node next) {
+        this.next = next;
+    }
+}
+
